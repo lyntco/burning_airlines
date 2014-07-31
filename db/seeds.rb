@@ -16,6 +16,13 @@ u1 = User.create(:username => 'lynt', :password => 'chicken', :password_confirma
 
 a1 = Airplane.create(:name => 'Burn baby burn', :rows => 4, :cols => 20)
 
-f1 = Flight.create(:flight_number => "707", :origin => 'SYD', :destination => 'HELL')
+f1 = Flight.create(:flight_number => "707", :origin => 'SYD', :destination => 'HELL', :date => '13/4/13')
+
+f1.airplane = a1
+f1.save
 
 r1 = Reservation.new
+
+r1.user = u1
+r1.flight = f1
+r1.save
