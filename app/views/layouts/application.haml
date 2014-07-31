@@ -7,6 +7,13 @@
     = csrf_meta_tags
   %body
     %nav
-      %ul
-      %li= @current_user.username if @current_user
+      %ul{:class => "nav nav-tabs", :role =>"tablist"}
+        - if @current_user
+          %li= @current_user.username
+          %li= link_to( 'logout', login_path, :method => :delete )
+        - else
+          %li= link_to( 'Airplanes', '#airplanes' )
+          %li= link_to( 'Flights', '#flights' )
+          %li= link_to( 'Reservations', '#reservations' )
+          %li= link_to( 'login', login_path )
     = yield

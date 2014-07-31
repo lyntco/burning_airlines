@@ -3,6 +3,7 @@
 
 %script#app-template{type: 'text/template'}
 
+// Form to make new airplane
 %script#new-airplane-template{type: 'text/template'}
   %div#new-airplane.col-md-12
     %form{:action => "/airplanes", :method => :post}
@@ -14,7 +15,7 @@
       %input#airplane-cols{type: 'range', min: 10, max: 100, name: 'airplane-cols'}
       %button{:type => 'button'} New Airplane
 
-
+// Page for single airplane
 %script#airplane-show-template{type: 'text/template'}
   %div.airplane.row
     %div.col-md-3
@@ -27,7 +28,7 @@
       -# button or something
   %div#seating.col-md-12
 
-
+// Row for single airplane on list
 %script#airplane-row-template{type: 'text/template'}
   %div.airplane.row
     %div.col-md-3
@@ -39,6 +40,7 @@
     %div.col-md-3
       button or something
 
+// List of airplanes
 %script#airplanes-template{type: 'text/template'}
   %div#airplanes.row
     %div.col-md-3
@@ -50,6 +52,7 @@
     %div.col-md-3
       Book button
 
+// Form to search airplanes
 %script#flight-search-template{type: 'text/template'}
   %div
     %form#flight-selection
@@ -71,6 +74,8 @@
 
       %input{type: 'submit'}
 
+
+// Page for single flight to book seats
 %script#flight-show-template{type: 'text/template'}
   %div.flight.row
     %div.col-md-2
@@ -85,6 +90,7 @@
     %div.col-md-2
   %div#seating.col-md-12
 
+// Single row for flight inside list
 %script#flight-row-template{type: 'text/template'}
   %div.flight.row
     %div.col-md-2
@@ -99,6 +105,7 @@
     %div.col-md-2
       Book button
 
+// List of flights
 %script#flights-template{type: 'text/template'}
   %div#flights.row
     %div.col-md-2
@@ -114,7 +121,7 @@
       Book now!
 
 
-
+// Single reservation row for admin
 %script#admin-reservation-template{type: 'text/template'}
   %div#reservation.row
     %div.col-md-2
@@ -129,6 +136,7 @@
     %div.col-md-2
       Remove
 
+// List of reservations(all)
 %script#admin-reservations-template{type: 'text/template'}
   %div#reservations.row
     %div.col-md-2
@@ -143,6 +151,7 @@
     %div.col-md-2
       Booking
 
+// Single reservation row for the current user
 %script#user-reservation-template{type: 'text/template'}
   %div#user-reservation.row
     %div.col-md-3
@@ -154,6 +163,7 @@
     %div.col-md-3
       Booking button or somthing
 
+// List of reservations(current user)
 %script#user-reservations-template{type: 'text/template'}
   %div#user-reservations.row
     %div.col-md-3
@@ -165,9 +175,10 @@
     %div.col-md-3
       Booking
 
-
+//Box for a single seat
 %script#seat-template{type: 'text/template'}
   %div#seat
 
+// Div for all the seats to go into
 %script#seating-template{type: 'text/template'}
   %div#seating

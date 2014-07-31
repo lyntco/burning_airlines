@@ -27,6 +27,6 @@ body {
   display: inline-block;
 }
 
-.seat:hover {
+.reserve:hover {
   background-color: red;
 }
