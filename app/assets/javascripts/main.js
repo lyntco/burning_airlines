@@ -12,11 +12,26 @@ $(document).ready(function() {
     seatView: $('#seat-template'),
     seatingView: $('#seating-template').html()
   }
-
-  app.router = new app.Router();
   app.airplanes = new app.Airplanes();
   app.reservations = new app.Reservations();
   app.flights = new app.Flights();
-  app.flights.fetch();
+
+  var counter = 0;
+  app.flights.fetch().done(function() {
+    counter++;
+    console.log(counter);
+    if (counter == 3) app.router = new app.Router();
+  });
+  app.reservations.fetch().done(function() {
+    counter++;
+    console.log(counter);
+    if (counter == 3) app.router = new app.Router();
+  });
+  app.airplanes.fetch().done(function() {
+    counter++;
+    console.log(counter);
+    if (counter == 3) app.router = new app.Router();
+  });
+
   Backbone.history.start();
 });

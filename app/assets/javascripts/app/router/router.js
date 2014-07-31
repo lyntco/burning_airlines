@@ -39,13 +39,16 @@ app.Router = Backbone.Router.extend({
   },
 
   getAirplane: function(id) {
-    // console.log(app.airplanes)
     // app.airplanes.fetch().done( function(data) {
-    // var airplane = app.airplanes.get(id);
-    var airplane = new app.Airplane({name: 'This is so freaking', rows: 5, cols: 20})
-
-    new app.AirplaneShowView({model: airplane});
-
+    //   console.log(a)
+    //   var airplane = app.airplanes.get(id);
+    //   var airplane = new app.Airplane({name: 'This is so freaking', rows: 5, cols: 20})
+    app.airplane = app.airplanes.get(id);
+    console.log(app.airplane)
+    console.log(app.airplane);
+    var view = new app.AirplaneShowView({model: app.airplane});
+    view.render();
+    //   console.log(data);
     // })
   },
 

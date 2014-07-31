@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   def index
-    # @reservations = reservations //where flight id_ = pram
+    @reservations = Reservation.all
+    render json: @reservations
   end
 
   def create
