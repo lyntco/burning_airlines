@@ -8,7 +8,7 @@ app.AirplanesView = Backbone.View.extend({
   },
   render: function(){
     this.$el.html( app.templates.airplaneNewView ) // puts form in
-    // this.$el.append( app.templates.seatingView )
+    this.$el.append( app.templates.seatingView )
     this.$el.append( app.templates.airplanesView )
     this.collection.each(function(a){
       var view = new app.AirplaneView({model: a});
