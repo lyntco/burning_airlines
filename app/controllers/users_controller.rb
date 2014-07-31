@@ -19,27 +19,22 @@ class UsersController < ApplicationController
   end
 
   def new
-    # raise params.inspect
     @user = User.new
   end
 
   def edit
-    @user = User.find_by(:username => params[:id])
-    if params[:id] != @current_user.username && @current_user.is_admin? == false
-      redirect_to( edit_user_path(@current_user.username) )
+    @user = User.find(params[:id])
+    if params[:id].to_i != @current_user.id && @current_user.is_admin? != true
+      redirect_to( edit_user_path(@current_user) )
     end
   end
 
   def show
-    @user = User.find_by(:username => params[:id])
-    @followers = Friendship.where(:friend_id => @user.id)
-    if @user.items.any?
-      @brands = @user.items.each {|i| i.brand }
-    end
+    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find_by(:username => params[:id])
+    @user = User.find(params[:id])
 
     if @current_user.authenticate(params[:user][:current_password]) || @current_user.is_admin?
       @user.update user_params
@@ -50,12 +45,12 @@ class UsersController < ApplicationController
       end
     else
       flash[:notice] = "Your current password didn't match. Please try again"
-      redirect_to( edit_user_path(@current_user.username) )
+      redirect_to( edit_user_path(@current_user) )
     end
   end
 
   def make_admin
-    user = User.find_by(:username => params[:id])
+    user = User.find(params[:id])
     if user.is_admin?
       user.is_admin = false
     else
@@ -66,23 +61,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find_by(:username => params[:id])
+    user = User.find(params[:id])
     user.destroy
     redirect_to( users_path )
-  end
-
-  def follow
-    user_to_add = User.find_by(:username => params[:id])
-    @current_user.friends << user_to_add
-    redirect_to( user_path( user_to_add.username) )
-  end
-
-  def unfollow
-    # raise params.inspect
-    user_to_remove = User.find_by(:username => params[:id])
-    friendship = @current_user.friendships.find_by( :friend_id => user_to_remove.id )
-    friendship.destroy
-    redirect_to( user_path( user_to_remove.username) )
   end
 
   private
