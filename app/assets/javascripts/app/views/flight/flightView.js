@@ -14,7 +14,7 @@ app.FlightView = Backbone.View.extend({
     var template = Handlebars.compile(app.templates.flightView);
     console.log(this.collection)
     var view_html = template({models: this.collection.models})
-
+    this.$el.html(view_html);
     // var view = this.$el.html(app.templates.flightView);
     // this.collection.models.each(function() {});
     // this.models.each(function(model) {
@@ -25,5 +25,13 @@ app.FlightView = Backbone.View.extend({
     //   $(view).('#origin').append($('<select>').value(models.id).name
     // end
     return this;
+  },
+  events: {
+    'submit': 'submitFlight'
+  },
+
+  submitFlight: function(event) {
+    event.preventDefault();
+    console.log(event);
   }
 })
