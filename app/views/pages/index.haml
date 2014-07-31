@@ -125,7 +125,7 @@
 %script#reservation-template{type: 'text/template'}
   %div#reservation.row
     %div.col-md-2
-      = if @current_user.is_admin?
+      - if @current_user && @current_user.is_admin?
         {{ user_id }}
     %div.col-md-2
       {{ flight_id }}
@@ -141,7 +141,7 @@
 %script#reservations-template{type: 'text/template'}
   %div#reservations.row
     %div.col-md-2
-      = if @current_user.is_admin?
+      - if @current_user && @current_user.is_admin?
         Reservation Owner
     %div.col-md-2
       Flight

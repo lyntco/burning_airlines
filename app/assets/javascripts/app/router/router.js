@@ -13,7 +13,7 @@ app.Router = Backbone.Router.extend({
   'users/:id': 'getUser'
   },
   initialize: function() {
-    this.getAirplanes();
+    this.getReservations();
   },
   index: function() {
     console.log('you got index');
@@ -54,6 +54,9 @@ app.Router = Backbone.Router.extend({
   },
 
   getReservations: function() {
+    // console.log(app.reservations)
+    var view = new app.ReservationsView({collection: app.reservations});
+    view.render();
     console.log('you got reservations');
   },
 
