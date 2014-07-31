@@ -32,10 +32,13 @@ app.FlightSearchView = Backbone.View.extend({
 
   submitFlight: function(event) {
     event.preventDefault();
-    console.log($('#flight-start-dropdown').val());
-    console.log(this.collection.where({origin: $('#flight-start-dropdown').val()}))
-    // var selectedFlights =
-    var view = new app.FlightView();
-    this.$el.append()
+    // select from current collection - dirty hack you should fetch at this point
+    var mainView = this
+    mainView.$el.find('#flight-results').html('');
+    var selectedFlights = this.collection.where({origin: $('#flight-start-dropdown option:selected').val(), destination: $('#flight-end-dropdown option:selected').val()});
+    _.each(selectedFlights, function(flight) {
+      var view = new app.FlightView({model: flight});
+      mainView.$el.find('#flight-results').html(view.render());
+    });
   }
 })
