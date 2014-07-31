@@ -15,8 +15,9 @@ app.AirplaneNewView = Backbone.View.extend({
   },
   addNewAirplane: function(event){
     // event.preventDefault();
-    $('#airplane-name').val();
-    console.log(this)
+    var newPlane = new app.Airplane( {name: $('#airplane-name').val(), rows: $('#airplane-rows').val(), cols: $('#airplane-cols').val()} )
+    newPlane.save()
+    // console.log(this)
     // alert(this)
   },
 });
