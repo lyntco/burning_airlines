@@ -9,6 +9,10 @@ $(document).ready(function() {
     airplaneView: $('#airplane-template').html(),
     airplaneNewView: $('#new-airplane-template').html(),
     airplanesView: $('#airplanes-template').html(),
+    flightShowView: $('#flight-show-template').html(),
+    flightView: $('#flight-template').html(),
+    // flightNewView: $('#new-flight-template').html(),
+    flightsView: $('#flights-template').html(),
     seatView: $('#seat-template'),
     seatingView: $('#seating-template').html()
   }

@@ -46,7 +46,7 @@
       {{ cols }}
     %div.col-md-3
       -# button or something
-    %div#seating.col-md-12
+  %div#seating.col-md-12
 
 
 %script#airplane-template{type: 'text/template'}
@@ -72,10 +72,46 @@
       Book button
 
 %script#flight-show-template{type: 'text/template'}
+  %div.flight.row
+    %div.col-md-2
+      {{ flight_number }}
+    %div.col-md-2
+      {{ airplane_id }}
+    %div.col-md-2
+      {{ date }}
+    %div.col-md-2
+      Seats left
+    %div.col-md-2
+    %div.col-md-2
+  %div#seating.col-md-12
 
 %script#flight-template{type: 'text/template'}
+  %div.flight.row
+    %div.col-md-2
+      {{ flight_number }}
+    %div.col-md-2
+      {{ airplane_id }}
+    %div.col-md-2
+      {{ date }}
+    %div.col-md-2
+      Seats left
+    %div.col-md-2
+    %div.col-md-2
+      Book button
 
 %script#flights-template{type: 'text/template'}
+  %div#flights.row
+    %div.col-md-2
+      Flight number
+    %div.col-md-2
+      Airplane
+    %div.col-md-2
+      Departure Date
+    %div.col-md-2
+      Seats left
+    %div.col-md-2
+    %div.col-md-2
+      Book now!
 
 
 
