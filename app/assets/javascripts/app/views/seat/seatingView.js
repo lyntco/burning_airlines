@@ -11,11 +11,13 @@ app.SeatingView = Backbone.View.extend({
     this.$el.html( app.templates.seatingView );
     _( seatingBox.model.get('rows') ).times(function(n){
       var rowLetters = ['A','B','C','D','E','F','G','H']
-      seatingBox.$el.append('<div/>')
-      seatingBox.$el.append( rowLetters[n] )
+      var newRow = $('<div class="seatRow"/>')
+      newRow.text( rowLetters[n] )
+
       _( seatingBox.model.get('cols') ).times(function(n){
-        seatingBox.$el.append( new app.SeatView().render() )
+        newRow.append( new app.SeatView().render() )
       });
+      seatingBox.$el.append( newRow )
     });
 
   }
