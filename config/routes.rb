@@ -4,4 +4,6 @@ Rails.application.routes.draw do
  post '/search' => 'pages#search_results'
  resources :users
  resources :airplanes
+ resources :flights
+ resources :reservations
 end
