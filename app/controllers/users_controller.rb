@@ -10,10 +10,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
     # raise params.inspect
     @user.username = @user.username.downcase # forces downcase username
-    @user.instagram_id = session[:instagram_id] if session[:instagram_id]
     if @user.save
       session[:user_id] = @user.id
-      session[:instagram_id] = nil
       redirect_to( root_path )
     else
       render :new
@@ -89,7 +87,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :name, :avatar, :avatar_cache, :remote_avatar_url, :password, :password_confirmation, :size, :email)
+    params.require(:user).permit(:username, :name, :password, :password_confirmation, :email)
   end
 
 end

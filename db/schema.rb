@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20140731023823) do
   create_table "reservations", force: true do |t|
     t.integer  "flight_id"
     t.integer  "user_id"
-    t.string   "row"
+    t.integer  "row"
     t.integer  "col"
     t.datetime "created_at"
     t.datetime "updated_at"

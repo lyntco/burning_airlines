@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  flight_id  :integer
 #  user_id    :integer
-#  row        :string(255)
+#  row        :integer
 #  col        :integer
 #  created_at :datetime
 #  updated_at :datetime
