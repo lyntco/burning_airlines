@@ -33,7 +33,6 @@ app.FlightView = Backbone.View.extend({
 
   submitFlight: function(event) {
     event.preventDefault();
-    console.log(event);
-    console.log(this)
+    console.log(this.$el)
   }
 })
