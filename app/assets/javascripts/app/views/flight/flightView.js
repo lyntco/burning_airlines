@@ -10,9 +10,16 @@ app.viewFlight = Backbone.View.extend({
   },
 
   render: function() {
-    console.log('tried to render');
-    var view = this.$el.html(app.templates.flightView);
-    this.collection.models.each(function() {});
+    // console.log(this.collection);
+    var template = Handlebars.compile(app.templates.flightView);
+    console.log(this.collection.toJSON());
+    try {
+      var copy = template(this.collection.toJSON());
+    } catch(err) {
+      console.log('err');
+    }
+    // var view = this.$el.html(app.templates.flightView);
+    // this.collection.models.each(function() {});
     // this.models.each(function(model) {
     //   console.log(model);
     //   view.find('select').value();
