@@ -13,8 +13,8 @@ app.AirplanesView = Backbone.View.extend({
   render: function(){
     this.$el.html( app.templates.airplanesView )
     // console.log(this.collection)
-    this.collection.each(function(airplane){
-      var view = new app.AirplaneView({model: airplane});
+    this.collection.each(function(a){
+      var view = new app.AirplaneView({model: a});
       $('#airplanes').append( view.render() );
     });
     // console.log('rendreing airplanes')
