@@ -24,9 +24,9 @@ app.Router = Backbone.Router.extend({
   },
 
   getFlight: function(id) {
-    var flight = new app.Flight({flight_number: '191', origin: 'SYD', destination: 'TKO', airplane_id: 85})
+    // var flight = new app.Flight({flight_number: '191', origin: 'SYD', destination: 'TKO', airplane_id: 85})
 
-    new app.FlightShowView({model: flight});
+    // new app.FlightShowView({model: flight});
 
     console.log('you got flight' + id);
   },
