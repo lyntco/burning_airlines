@@ -6,7 +6,7 @@ app.Router = Backbone.Router.extend({
   'flights': 'getFlights',
   'flights/:id': 'getFlight',
   'airplanes': 'getAirplanes',
-  'airplane': 'getAirplane',
+  'airplane/:id': 'getAirplane',
   'reservations': 'getReservations',
   'reservation': 'getReservation',
   'users': 'getUsers',
@@ -17,7 +17,7 @@ app.Router = Backbone.Router.extend({
   },
 
   getFlights: function() {
-    var view = new app.viewFlight({collection: app.flights});
+    var view = new app.ViewFlight();
     view.render();
   },
 
@@ -26,6 +26,8 @@ app.Router = Backbone.Router.extend({
   },
 
   getAirplanes: function() {
+    var view = new app.AirplanesView();
+    view.render();
     console.log('you got airplanes');
   },
 

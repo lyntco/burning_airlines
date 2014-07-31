@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.viewFlight = Backbone.View.extend({
+app.ViewFlight = Backbone.View.extend({
   el: '#main',
 
   initialize: function() {
