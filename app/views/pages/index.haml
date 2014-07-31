@@ -33,7 +33,7 @@
       %input#airplane-rows{type: 'range', min: 4, max: 8, name: 'airplane-rows'}
       %label{:for => "airplane-cols"} Columns:
       %input#airplane-cols{type: 'range', min: 10, max: 100, name: 'airplane-cols'}
-      %input{:type => 'submit'}
+      %button{:type => 'button'} New Airplane
     -# = form_tag "/airplanes", :id => 'new-airplane-form', :method => :post do
     -#   = label_tag :name
     -#   = text_field_tag :name

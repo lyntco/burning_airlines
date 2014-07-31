@@ -13,7 +13,7 @@ app.AirplaneView = Backbone.View.extend({
     var airplaneHTML = Handlebars.compile( app.templates.airplaneView );
     var copy = airplaneHTML( this.model.toJSON() );
     this.$el.append( copy );
-    return this
+    return this;
   },
   view: function(event) {
     console.log(event);
