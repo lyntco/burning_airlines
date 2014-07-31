@@ -3,27 +3,6 @@
 
 %script#app-template{type: 'text/template'}
 
-%script#flight-template{type: 'text/template'}
-  %div
-    %form#flight-selection
-      %label{:for => "flight-start-dropdown"} Origin:
-      %select#flight-start-dropdown{:name => "flight-start-dropdown"}
-        {{#each models}}
-        %option{value: '{{id}}'} {{attributes.origin}}
-        {{/each}}
-      %label{:for => "flight-end-dropdown"} Destination:
-      %select#flight-end-dropdown{:name => "flight-end-dropdown"}
-        {{#each models}}
-        %option{value: '{{id}}'} {{attributes.destination}}
-        {{/each}}
-      %label{:for => "start-date"} From:
-      %input#flight-to-date{type: 'date', name: 'start-date'}
-
-      %label{:for => "end-date"} To:
-      %input#flight-return-date{type: 'date',name: 'end-date'}
-
-      %input{type: 'submit'}
-
 %script#new-airplane-template{type: 'text/template'}
   %div#new-airplane.col-md-12
     %form{:action => "/airplanes", :method => :post}
@@ -49,7 +28,7 @@
   %div#seating.col-md-12
 
 
-%script#airplane-template{type: 'text/template'}
+%script#airplane-row-template{type: 'text/template'}
   %div.airplane.row
     %div.col-md-3
       {{ name }}
@@ -71,6 +50,27 @@
     %div.col-md-3
       Book button
 
+%script#flight-template{type: 'text/template'}
+  %div
+    %form#flight-selection
+      %label{:for => "flight-start-dropdown"} Origin:
+      %select#flight-start-dropdown{:name => "flight-start-dropdown"}
+        {{#each models}}
+        %option{value: '{{id}}'} {{attributes.origin}}
+        {{/each}}
+      %label{:for => "flight-end-dropdown"} Destination:
+      %select#flight-end-dropdown{:name => "flight-end-dropdown"}
+        {{#each models}}
+        %option{value: '{{id}}'} {{attributes.destination}}
+        {{/each}}
+      %label{:for => "start-date"} From:
+      %input#flight-to-date{type: 'date', name: 'start-date'}
+
+      %label{:for => "end-date"} To:
+      %input#flight-return-date{type: 'date',name: 'end-date'}
+
+      %input{type: 'submit'}
+
 %script#flight-show-template{type: 'text/template'}
   %div.flight.row
     %div.col-md-2
@@ -85,7 +85,7 @@
     %div.col-md-2
   %div#seating.col-md-12
 
-%script#flight-template{type: 'text/template'}
+%script#flight-row-template{type: 'text/template'}
   %div.flight.row
     %div.col-md-2
       {{ flight_number }}

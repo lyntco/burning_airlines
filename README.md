@@ -1,9 +1,14 @@
-== BURNING AIRLINES
+# BURNING AIRLINES
 
 Mythical in its WDI history, we are attempting this challenge.
 
-+ [ ] Sign up
-+ [ ] Sign in
-+ [ ] Admin
-+ [ ] Create Airplane
-
++ [x] Sign up
++ [x] Sign in
++ [ ] Admin permissions
++ [x] Create Airplane
++ [x] List Airplane
++ [ ] Create Flights
++ [ ] List Flights
++ [ ] Create Reservations
++ [ ] Remove Reservations
++ [ ] Update Reservations real time
