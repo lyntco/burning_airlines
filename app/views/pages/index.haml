@@ -12,15 +12,24 @@
       %label{:for => "end-date"} To:
       %input#flight-return-date{type: 'date',name: 'end-date'}
 
+
 %script#new-airplane-template{type: 'text/template'}
   %div#new-airplane.col-md-12
-    %form{:action => ""}
+    %form{:action => "/airplanes", :method => :post}
+      %label{:for => "airplane-name"} Airplane Name:
+      %input#airplane-name{name: 'airplane-name'}
+      %label{:for => "airplane-rows"} Rows:
+      %input#airplane-rows{type: 'range', min: 4, max: 8, name: 'airplane-rows'}
+      %label{:for => "airplane-cols"} Columns:
+      %input#airplane-cols{type: 'range', min: 10, max: 100, name: 'airplane-cols'}
+      %submit
+
 
 
 
 %script#airplane-template{type: 'text/template'}
   %div#airplane.row
-      %div.col-md-3
+    %div.col-md-3
       {{ name }}
     %div.col-md-3
       {{ rows }}
@@ -77,7 +86,7 @@
     %div.col-md-3
       Departure Date through assoc
     %div.col-md-3
-      {{ row }}{{col}}
+      {{ row }}{{ col }}
     %div.col-md-3
       Booking button or somthing
 

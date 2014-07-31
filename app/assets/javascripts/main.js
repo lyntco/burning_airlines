@@ -3,7 +3,8 @@ var app = app || {};
 $(document).ready(function() {
   app.templates = {
     // Get templates when they are instantiated
-    flightView: $('#flight-template').html()
+    flightView: $('#flight-template').html(),
+    airplanesView: $('#airplanes-template').html()
   }
 
   app.router = new app.Router();
