@@ -1,9 +1,9 @@
 var app = app || {};
 
+// This view is for the single seats on an airplane show page
 app.SeatingView = Backbone.View.extend({
   el: '#seating',
   initialize: function() {
-    this.seatNumbers = this.model.get('rows') * this.model.get('cols');
     this.render();
   },
   render: function() {

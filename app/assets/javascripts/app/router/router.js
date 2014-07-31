@@ -24,6 +24,10 @@ app.Router = Backbone.Router.extend({
   },
 
   getFlight: function(id) {
+    var flight = new app.Flight({flight_number: '191', origin: 'SYD', destination: 'TKO', airplane_id: 85})
+
+    new app.FlightShowView({model: flight});
+
     console.log('you got flight' + id);
   },
 
@@ -38,7 +42,7 @@ app.Router = Backbone.Router.extend({
     // console.log(app.airplanes)
     // app.airplanes.fetch().done( function(data) {
     // var airplane = app.airplanes.get(id);
-    var airplane = new app.Airplane({name: 'This is so freaking', rows: 5, cols: '20'})
+    var airplane = new app.Airplane({name: 'This is so freaking', rows: 5, cols: 20})
 
     new app.AirplaneShowView({model: airplane});
 
