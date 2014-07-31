@@ -1,7 +1,8 @@
 var app = app || {};
 
 app.AirplaneNewView = Backbone.View.extend({
-  el: '#airplanes',
+  tagName: 'div',
+
   events: {
     'click button': 'addNewAirplane'
   },
@@ -9,17 +10,14 @@ app.AirplaneNewView = Backbone.View.extend({
     // this.render()
   },
   render: function() {
+    console.log('creating new view')
     this.$el.html( app.templates.airplaneNewView );
-    console.log('render new airplane');
-    // return this;
+    return this.el;
   },
   addNewAirplane: function(event){
     // event.preventDefault();
     var newPlane = new app.Airplane( {name: $('#airplane-name').val(), rows: $('#airplane-rows').val(), cols: $('#airplane-cols').val()} )
     newPlane.save();
     app.airplanes.add(newPlane);
-    debugger;
-    // console.log(this)
-    // alert(this)
   },
 });

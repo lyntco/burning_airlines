@@ -2,7 +2,7 @@ var app = app || {};
 
 // Single row airplane
 app.AirplaneView = Backbone.View.extend({
-  el: '#airplanes',
+  tagName: 'div',
   initialize: function() {
     _.bindAll(this, 'render');
     this.model.bind('change', this.render);

@@ -11,10 +11,12 @@ app.AirplanesView = Backbone.View.extend({
   },
   render: function(){
     var createAirplaneView = new app.AirplaneNewView();
-    createAirplaneView.render() // puts form in
-    this.$el.append( airplaneView.render() );
-    this.$el.append( app.templates.airplaneView );
-    return this;
+    this.$el.html( createAirplaneView.render() )
+    var viewAll = this;
+    this.collection.each(function(model){
+      var planeView = new app.AirplaneView({model: model});
+      viewAll.$el.append( planeView.render() );
+    })
   },
   view: function() {
     // app.router.navigate('airplanes/' + this.model.get('id'), true );
