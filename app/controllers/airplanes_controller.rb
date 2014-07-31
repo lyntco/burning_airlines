@@ -9,6 +9,7 @@ class AirplanesController < ApplicationController
   end
 
   def create
+    # raise params.inspect
     airplane = Airplane.create(:name => params[:name],
       :rows => params[:rows],
       :cols => params[:cols]

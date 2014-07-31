@@ -16,4 +16,4 @@ $(document).ready(function() {
   app.flights = new app.Flights();
   app.flights.fetch();
   Backbone.history.start();
-})
+});
