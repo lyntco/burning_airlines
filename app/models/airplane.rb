@@ -11,4 +11,5 @@
 #
 
 class Airplane < ActiveRecord::Base
+  has_many :fights
 end
