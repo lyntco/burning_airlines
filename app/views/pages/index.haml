@@ -1,7 +1,26 @@
+%div#main
+
 %script#flight-template{type: 'text/template'}
   %div#flight-selection-div
     %form#flight-selection-form
-      %select#flight-start-dropdown
-      %select#flight-end-dropdown
-      %input#flight-to-date{type: 'date'}
-      %input#flight-return-date{type: 'date'}
+      %label{:for => "flight-start-dropdown"} Origin:
+      %select#flight-start-dropdown{:name => "flight-start-dropdown"}
+      %label{:for => "flight-end-dropdown"} Destination:
+      %select#flight-end-dropdown{:name => "flight-end-dropdown"}
+      %label{:for => "start-date"} From:
+      %input#flight-to-date{type: 'date', name: 'start-date'}
+      %label{:for => "end-date"} To:
+      %input#flight-return-date{type: 'date',name: 'end-date'}
+
+%script#new-airplane-template{type: 'text/template'}
+  %div#new-airplane
+    %form{:action => ""}
+
+%script#airplanes-template{type: 'text/template'}
+  %div#airplanes
+
+%script#reservations-template{type: 'text/template'}
+
+%script#seating-template{type: 'text/template'}
+
+%script#seat-template{type: 'text/template'}
