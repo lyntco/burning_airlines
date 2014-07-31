@@ -16,8 +16,8 @@ u1 = User.create(:username => 'lynt', :password => 'chicken', :password_confirma
 a1 = Airplane.create(:name => 'Burn baby burn', :rows => 4, :cols => 20)
 
 
-f2 = Flight.create(flight_number: 'MH370', origin: 'Malaysia', destination: 'unknown', date: current_date)
-f1 = Flight.create(:flight_number => "707", :origin => 'SYD', :destination => 'HELL', :date => current_date)
+f2 = Flight.create(flight_number: 'MH370', origin: 'Malaysia', destination: 'unknown', date: '2014/10/10')
+f1 = Flight.create(:flight_number => "707", :origin => 'SYD', :destination => 'HELL', :date => '2014/10/10')
 
 f1.airplane = a1
 f1.save
