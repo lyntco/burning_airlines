@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.ViewFlight = Backbone.View.extend({
+app.FlightView = Backbone.View.extend({
   el: '#main',
 
   initialize: function() {
@@ -10,14 +10,11 @@ app.ViewFlight = Backbone.View.extend({
   },
 
   render: function() {
-    // console.log(this.collection);
+
     var template = Handlebars.compile(app.templates.flightView);
-    console.log(this.collection.toJSON());
-    try {
-      var copy = template(this.collection.toJSON());
-    } catch(err) {
-      console.log('err');
-    }
+    console.log(this.collection)
+    var view_html = template({models: this.collection.models})
+
     // var view = this.$el.html(app.templates.flightView);
     // this.collection.models.each(function() {});
     // this.models.each(function(model) {

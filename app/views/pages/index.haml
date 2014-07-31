@@ -5,9 +5,9 @@
     %form#flight-selection
       %label{:for => "flight-start-dropdown"} Origin:
       %select#flight-start-dropdown{:name => "flight-start-dropdown"}
-        {{ #each models }}
+        {{#each models}}
         %option
-        {{ /each}}
+        {{/each}}
       %label{:for => "flight-end-dropdown"} Destination:
       %select#flight-end-dropdown{:name => "flight-end-dropdown"}
       %label{:for => "start-date"} From:
