@@ -19,7 +19,7 @@ app.Router = Backbone.Router.extend({
   },
 
   getFlights: function() {
-    var view = new app.FlightView({collection: app.flights});
+    var view = new app.FlightSearchView({collection: app.flights});
     view.render();
   },
 

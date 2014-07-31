@@ -1,7 +1,7 @@
 var app = app || {};
 
 // search and result underneath
-app.FlightView = Backbone.View.extend({
+app.FlightSearchView = Backbone.View.extend({
   el: '#main',
 
   initialize: function() {
@@ -13,7 +13,6 @@ app.FlightView = Backbone.View.extend({
   render: function() {
 
     var template = Handlebars.compile(app.templates.flightSearchView);
-    console.log(this.collection)
     var view_html = template({models: this.collection.models})
     this.$el.html(view_html);
     // var view = this.$el.html(app.templates.flightView);
@@ -33,6 +32,10 @@ app.FlightView = Backbone.View.extend({
 
   submitFlight: function(event) {
     event.preventDefault();
-    console.log(this.$el)
+    console.log($('#flight-start-dropdown').val());
+    console.log(this.collection.where({origin: $('#flight-start-dropdown').val()}))
+    // var selectedFlights =
+    var view = new app.FlightView();
+    this.$el.append()
   }
 })
