@@ -10,17 +10,10 @@ app.AirplanesView = Backbone.View.extend({
     this.collection.bind('add', this.render);
   },
   render: function(){
-    $('#airplanes').html('');
-    var createAirplaneView = new app.AirplaneNewView()
-    this.$el.html( createAirplaneView.render() ) // puts form in
-    this.$el.append( app.templates.seatingView )
-
-    this.$el.append( app.templates.airplanesView )
-    this.collection.each(function(a){
-      var view = new app.AirplaneView({model: a});
-      $('#airplanes').append( view.render() );
-    });
-
+    var createAirplaneView = new app.AirplaneNewView();
+    createAirplaneView.render() // puts form in
+    this.$el.append( airplaneView.render() );
+    this.$el.append( app.templates.airplaneView );
     return this;
   },
   view: function() {
