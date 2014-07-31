@@ -5,11 +5,12 @@ $(document).ready(function() {
     // Get templates when they are instantiated
     appView: $('#app-template').html(),
     flightView: $('#flight-template').html(),
+    airplaneShowView: $('#airplane-show-template').html(),
     airplaneView: $('#airplane-template').html(),
     airplaneNewView: $('#new-airplane-template').html(),
     airplanesView: $('#airplanes-template').html(),
     seatView: $('#seat-template'),
-    seatingView: $('#seating-template')
+    seatingView: $('#seating-template').html()
   }
 
   app.router = new app.Router();
