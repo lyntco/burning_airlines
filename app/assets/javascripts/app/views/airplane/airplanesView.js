@@ -2,9 +2,6 @@ var app = app || {};
 
 app.AirplanesView = Backbone.View.extend({
   el: '#main',
-  events: {
-    'click': 'view'
-  },
   initialize: function() {
     _.bindAll(this, 'render');
     this.collection.bind('add', this.render);
@@ -18,7 +15,4 @@ app.AirplanesView = Backbone.View.extend({
       viewAll.$el.append( planeView.render() );
     })
   },
-  view: function() {
-    // app.router.navigate('airplanes/' + this.model.get('id'), true );
-  }
 });
