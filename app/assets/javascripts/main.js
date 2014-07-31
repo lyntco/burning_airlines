@@ -3,7 +3,9 @@ var app = app || {};
 $(document).ready(function() {
   app.templates = {
     // Get templates when they are instantiated
+    appView: $('#app-template').html(),
     flightView: $('#flight-template').html(),
+    airplaneView: $('#airplane-template').html(),
     airplanesView: $('#airplanes-template').html()
   }
 
@@ -11,8 +13,6 @@ $(document).ready(function() {
   app.airplanes = new app.Airplanes();
   app.reservations = new app.Reservations();
   app.flights = new app.Flights();
-  app.flights.fetch().done(function(data) {
-    console.log("finished");
-  });
+  app.flights.fetch();
   Backbone.history.start();
 })

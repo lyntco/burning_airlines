@@ -6,14 +6,19 @@ app.AirplanesView = Backbone.View.extend({
   events: {
     'click': 'view'
   },
-  inititialize: function() {
-
+  initialize: function() {
+    _.bindAll(this, 'render');
+    this.collection.bind('add', this.render);
   },
   render: function(){
-    // var listHTML = Handlebars.compile( app.templates.airplanesView );
-    // var copy = listHTML( this.model.toJSON() );
-    // this.$el.html( copy );
-    // return this.el;
+    this.$el.html( app.templates.airplanesView )
+    // console.log(this.collection)
+    this.collection.each(function(airplane){
+      var view = new app.AirplaneView({model: airplane});
+      $('#airplanes').append( view.render() );
+    });
+    // console.log('rendreing airplanes')
+    return this;
   },
   view: function() {
     app.router.navigate('airplanes/' + this.model.get('id'), true );
