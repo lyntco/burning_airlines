@@ -9,15 +9,20 @@
       %label{:for => "flight-start-dropdown"} Origin:
       %select#flight-start-dropdown{:name => "flight-start-dropdown"}
         {{#each models}}
-        %option
+        %option{value: '{{id}}'} {{attributes.origin}}
         {{/each}}
       %label{:for => "flight-end-dropdown"} Destination:
       %select#flight-end-dropdown{:name => "flight-end-dropdown"}
+        {{#each models}}
+        %option{value: '{{id}}'} {{attributes.destination}}
+        {{/each}}
       %label{:for => "start-date"} From:
       %input#flight-to-date{type: 'date', name: 'start-date'}
+
       %label{:for => "end-date"} To:
       %input#flight-return-date{type: 'date',name: 'end-date'}
 
+      %input{type: 'submit'}
 
 %script#new-airplane-template{type: 'text/template'}
   %div#new-airplane.col-md-12

@@ -32,7 +32,6 @@ app.Router = Backbone.Router.extend({
     console.log('you got airplanes');
     app.airplanes.fetch()
     var view = new app.AirplanesView({collection: app.airplanes});
-    // debugger;
     view.render();
   },
 
