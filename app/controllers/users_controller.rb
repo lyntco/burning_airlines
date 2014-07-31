@@ -19,15 +19,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    # raise params.inspect
     @user = User.new
   end
 
   def edit
     @user = User.find(params[:id])
-    raise params.inspect
-    if params[:id] != @current_user.id && @current_user.is_admin? == false
-
+    if params[:id].to_i != @current_user.id && @current_user.is_admin? != true
       redirect_to( edit_user_path(@current_user) )
     end
   end

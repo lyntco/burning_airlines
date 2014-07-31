@@ -8,5 +8,5 @@
   %body
     %nav
       %ul
-      %li= @current_user.username
+      %li= @current_user.username if @current_user
     = yield
