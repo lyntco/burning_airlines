@@ -2,7 +2,6 @@ var app = app || {};
 
 app.AirplanesView = Backbone.View.extend({
   el: '#main',
-    // tagName: 'li',
   events: {
     'click': 'view'
   },
@@ -11,13 +10,13 @@ app.AirplanesView = Backbone.View.extend({
     this.collection.bind('add', this.render);
   },
   render: function(){
-    this.$el.html( app.templates.airplanesView )
-    // console.log(this.collection)
+    this.$el.html( app.templates.airplaneNewView )
+    this.$el.append( app.templates.seatingView )
+    this.$el.append( app.templates.airplanesView )
     this.collection.each(function(a){
       var view = new app.AirplaneView({model: a});
       $('#airplanes').append( view.render() );
     });
-    // console.log('rendreing airplanes')
     return this;
   },
   view: function() {

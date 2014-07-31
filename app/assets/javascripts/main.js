@@ -6,6 +6,7 @@ $(document).ready(function() {
     appView: $('#app-template').html(),
     flightView: $('#flight-template').html(),
     airplaneView: $('#airplane-template').html(),
+    airplaneNewView: $('#new-airplane-template').html(),
     airplanesView: $('#airplanes-template').html()
   }
 
