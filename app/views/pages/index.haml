@@ -121,11 +121,12 @@
       Book now!
 
 
-// Single reservation row for admin
-%script#admin-reservation-template{type: 'text/template'}
+// Single reservation row
+%script#reservation-template{type: 'text/template'}
   %div#reservation.row
     %div.col-md-2
-      {{ user_id }}
+      = if @current_user.is_admin?
+        {{ user_id }}
     %div.col-md-2
       {{ flight_id }}
     %div.col-md-2
@@ -136,11 +137,12 @@
     %div.col-md-2
       Remove
 
-// List of reservations(all)
-%script#admin-reservations-template{type: 'text/template'}
+// List of reservations
+%script#reservations-template{type: 'text/template'}
   %div#reservations.row
     %div.col-md-2
-      Reservation Owner
+      = if @current_user.is_admin?
+        Reservation Owner
     %div.col-md-2
       Flight
     %div.col-md-2
@@ -151,29 +153,6 @@
     %div.col-md-2
       Booking
 
-// Single reservation row for the current user
-%script#user-reservation-template{type: 'text/template'}
-  %div#user-reservation.row
-    %div.col-md-3
-      {{ flight_id }}
-    %div.col-md-3
-      Departure Date through assoc
-    %div.col-md-3
-      {{ row }}{{ col }}
-    %div.col-md-3
-      Booking button or somthing
-
-// List of reservations(current user)
-%script#user-reservations-template{type: 'text/template'}
-  %div#user-reservations.row
-    %div.col-md-3
-      Flight
-    %div.col-md-3
-      Departure Date
-    %div.col-md-3
-      Seat Number
-    %div.col-md-3
-      Booking
 
 //Box for a single seat
 %script#seat-template{type: 'text/template'}
