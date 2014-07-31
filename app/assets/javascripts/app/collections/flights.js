@@ -1,7 +1,8 @@
 var app = app || {};
 
-app.Flights = new Backbone.Collection.extend({
+app.Flights = Backbone.Collection.extend({
   url: '/flights',
+  model: app.Flight,
   initialize: function(){
   }
 });

@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.Reservation = new Backbone.Model.extend({
+app.Reservation = Backbone.Model.extend({
   urlRoot: '/reservations',
   initialize: function(){
   }

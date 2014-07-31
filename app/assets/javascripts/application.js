@@ -16,4 +16,5 @@
 //= require lib/backbone
 //= require lib/handlebars-v1.3.0
 //= require bootstrap-sprockets
+//= require_tree ./app/models
 //= require_tree .

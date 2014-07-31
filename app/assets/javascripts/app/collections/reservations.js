@@ -1,7 +1,8 @@
 var app = app || {};
 
-app.Reservations = new Backbone.Collection.extend({
+app.Reservations = Backbone.Collection.extend({
   url: '/reservations',
+  model: app.Reservation,
   initialize: function(){
   }
 });
