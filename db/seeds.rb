@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.destroy_all
+Flight.destroy_all
+Airplane.destroy_all
+Reservation.destroy_all
+
+
+u1 = User.create(:username => 'lynt', :password => 'chicken', :password_confirmation => 'chicken', :email => 'strawww@gmail.com', :name => 'Larlyn', :is_admin? => true)
+
+a1 = Airplane.create(:name => 'Burn baby burn', :rows => 4, :cols => 20)
+
+f1 = Flight.create(:flight_number => "707", :origin => 'SYD', :destination => 'HELL')
+
+r1 = Reservation.new

@@ -15,4 +15,5 @@
 //= require underscore
 //= require backbone
 //= require handlebars-v1.3.0
+//= require bootstrap-sprockets
 //= require_tree .
