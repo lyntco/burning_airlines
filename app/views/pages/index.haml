@@ -1,8 +1,8 @@
 %div#main
 
 %script#flight-template{type: 'text/template'}
-  %div#flight-selection-div
-    %form#flight-selection-form
+  %div
+    %form#flight-selection
       %label{:for => "flight-start-dropdown"} Origin:
       %select#flight-start-dropdown{:name => "flight-start-dropdown"}
       %label{:for => "flight-end-dropdown"} Destination:
@@ -13,14 +13,88 @@
       %input#flight-return-date{type: 'date',name: 'end-date'}
 
 %script#new-airplane-template{type: 'text/template'}
-  %div#new-airplane
+  %div#new-airplane.col-md-12
     %form{:action => ""}
 
+
+
+%script#airplane-template{type: 'text/template'}
+  %div#airplane.row
+      %div.col-md-3
+      {{ name }}
+    %div.col-md-3
+      {{ rows }}
+    %div.col-md-3
+      {{ cols }}
+    %div.col-md-3
+      button or something
+
 %script#airplanes-template{type: 'text/template'}
-  %div#airplanes
+  %div#airplanes.row
+    %div.col-md-3
+      Airplane Name
+    %div.col-md-3
+      Rows
+    %div.col-md-3
+      Columns
+    %div.col-md-3
+      Book button
 
-%script#reservations-template{type: 'text/template'}
 
-%script#seating-template{type: 'text/template'}
+
+%script#admin-reservation-template{type: 'text/template'}
+  %div#reservation.row
+    %div.col-md-2
+      {{ user_id }}
+    %div.col-md-2
+      {{ flight_id }}
+    %div.col-md-2
+      depature date through associations
+    %div.col-md-2
+      {{ row }}{{ col }}
+    %div.col-md-2
+    %div.col-md-2
+      Remove
+
+%script#admin-reservations-template{type: 'text/template'}
+  %div#reservations.row
+    %div.col-md-2
+      Reservation Owner
+    %div.col-md-2
+      Flight
+    %div.col-md-2
+      Departure Date
+    %div.col-md-2
+      Seat Number
+    %div.col-md-2
+    %div.col-md-2
+      Booking
+
+%script#user-reservation-template{type: 'text/template'}
+  %div#user-reservation.row
+    %div.col-md-3
+      {{ flight_id }}
+    %div.col-md-3
+      Departure Date through assoc
+    %div.col-md-3
+      {{ row }}{{col}}
+    %div.col-md-3
+      Booking button or somthing
+
+%script#user-reservations-template{type: 'text/template'}
+  %div#user-reservations.row
+    %div.col-md-3
+      Flight
+    %div.col-md-3
+      Departure Date
+    %div.col-md-3
+      Seat Number
+    %div.col-md-3
+      Booking
+
 
 %script#seat-template{type: 'text/template'}
+  %div#seat
+
+%script#seating-template{type: 'text/template'}
+  %div#seating
