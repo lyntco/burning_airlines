@@ -20,5 +20,4 @@ app.AirplaneNewView = Backbone.View.extend({
     // console.log(this)
     // alert(this)
   },
-
 });
