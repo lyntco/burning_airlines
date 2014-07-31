@@ -1,5 +1,5 @@
 var app = app || {};
-
+// singular where can book
 app.FlightShowView = Backbone.View.extend({
   el: '#main',
   initialize: function() {

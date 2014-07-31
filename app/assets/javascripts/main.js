@@ -4,11 +4,11 @@ $(document).ready(function() {
   app.templates = {
     // Get templates when they are instantiated
     appView: $('#app-template').html(),
-    flightView: $('#flight-template').html(),
     airplaneShowView: $('#airplane-show-template').html(),
     airplaneView: $('#airplane-row-template').html(),
     airplaneNewView: $('#new-airplane-template').html(),
     airplanesView: $('#airplanes-template').html(),
+    flightSearchView: $('#flight-search-template').html(),
     flightShowView: $('#flight-show-template').html(),
     flightView: $('#flight-row-template').html(),
     // flightNewView: $('#new-flight-template').html(),
