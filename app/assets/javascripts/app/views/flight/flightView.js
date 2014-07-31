@@ -1,12 +1,18 @@
 var app = app || {};
 
-app.View.Flight = Backbone.View.extend({
+app.viewFlight = Backbone.View.extend({
+  el: '#main',
+
   initialize: function() {
 
   },
 
   render: function() {
-    var view_html = Handlebars.compile(app.templates.flightView);
-    console.log(view_html);
+    this.$el.html(app.templates.flightView);
+    console.log(app.templates.flightView);
+
+    // var view_html = Handlebars.compile(app.templates.flightView);
+    // var copy = view_html();
+
   }
 })
