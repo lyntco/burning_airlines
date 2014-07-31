@@ -6,9 +6,13 @@ $(document).ready(function() {
     appView: $('#app-template').html(),
     flightView: $('#flight-template').html(),
     airplaneShowView: $('#airplane-show-template').html(),
-    airplaneView: $('#airplane-template').html(),
+    airplaneView: $('#airplane-row-template').html(),
     airplaneNewView: $('#new-airplane-template').html(),
     airplanesView: $('#airplanes-template').html(),
+    flightShowView: $('#flight-show-template').html(),
+    flightView: $('#flight-row-template').html(),
+    // flightNewView: $('#new-flight-template').html(),
+    flightsView: $('#flights-template').html(),
     seatView: $('#seat-template'),
     seatingView: $('#seating-template').html()
   }
