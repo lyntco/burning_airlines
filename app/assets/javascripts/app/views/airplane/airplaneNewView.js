@@ -17,6 +17,7 @@ app.AirplaneNewView = Backbone.View.extend({
     alert(this)
   },
   test: function(event) {
-    console.log(event)
+    event.preventDefault();
+    console.log(event);
   }
 });

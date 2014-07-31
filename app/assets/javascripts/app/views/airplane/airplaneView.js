@@ -15,7 +15,8 @@ app.AirplaneView = Backbone.View.extend({
     this.$el.append( copy );
     return this
   },
-  view: function() {
+  view: function(event) {
+    console.log(event);
     // app.router.navigate('airplanes/' + this.model.get('id'), true );
   }
 });
