@@ -47,6 +47,19 @@
     -#   = submit_tag
 
 
+%script#airplane-show-template{type: 'text/template'}
+  %div.airplane.row
+    %div.col-md-3
+      {{ name }}
+    %div.col-md-3
+      {{ rows }}
+    %div.col-md-3
+      {{ cols }}
+    %div.col-md-3
+      -# button or something
+    %div#seating.col-md-12
+
+
 %script#airplane-template{type: 'text/template'}
   %div.airplane.row
     %div.col-md-3
