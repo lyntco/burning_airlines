@@ -54,6 +54,9 @@ app.Router = Backbone.Router.extend({
   },
 
   getReservations: function() {
+    // console.log(app.reservations)
+    var view = new app.ReservationsView({collection: app.reservations});
+    view.render();
     console.log('you got reservations');
   },
 

@@ -13,9 +13,9 @@ $(document).ready(function() {
     flightView: $('#flight-row-template').html(),
     // flightNewView: $('#new-flight-template').html(),
     flightsView: $('#flights-template').html(),
-    reservationView: $('#reservation-template'),
-    reservationsView: $('#reservations-template'),
-    seatView: $('#seat-template'),
+    reservationView: $('#reservation-template').html(),
+    reservationsView: $('#reservations-template').html(),
+    seatView: $('#seat-template').html(),
     seatingView: $('#seating-template').html()
   }
   app.airplanes = new app.Airplanes();

@@ -10,5 +10,6 @@ Mythical in its WDI history, we are attempting this challenge.
 + [ ] Create Flights
 + [ ] List Flights
 + [ ] Create Reservations
++ [x] List reservations
 + [ ] Remove Reservations
 + [ ] Update Reservations real time
