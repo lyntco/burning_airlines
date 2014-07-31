@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.flightView = Backbone.View.extend({
+app.View.Flight = Backbone.View.extend({
   initialize: function() {
 
   },
