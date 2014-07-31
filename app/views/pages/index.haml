@@ -59,12 +59,12 @@
       %label{:for => "flight-start-dropdown"} Origin:
       %select#flight-start-dropdown{:name => "flight-start-dropdown"}
         {{#each models}}
-        %option{value: '{{id}}'} {{attributes.origin}}
+        %option{value: '{{attributes.origin}}'} {{attributes.origin}}
         {{/each}}
       %label{:for => "flight-end-dropdown"} Destination:
       %select#flight-end-dropdown{:name => "flight-end-dropdown"}
         {{#each models}}
-        %option{value: '{{id}}'} {{attributes.destination}}
+        %option{value: '{{attributes.destination}}'} {{attributes.destination}}
         {{/each}}
       %label{:for => "start-date"} From:
       %input#flight-to-date{type: 'date', name: 'start-date'}
@@ -73,7 +73,7 @@
       %input#flight-return-date{type: 'date',name: 'end-date'}
 
       %input{type: 'submit'}
-
+    %div#flight-results
 
 // Page for single flight to book seats
 %script#flight-show-template{type: 'text/template'}
