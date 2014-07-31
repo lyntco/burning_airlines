@@ -25,8 +25,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if params[:id] != @current_user.username && @current_user.is_admin? == false
-      redirect_to( edit_user_path(@current_user.username) )
+    raise params.inspect
+    if params[:id] != @current_user.id && @current_user.is_admin? == false
+
+      redirect_to( edit_user_path(@current_user) )
     end
   end
 
