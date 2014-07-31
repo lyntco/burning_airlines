@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.SeatView = Backbone.View.extend({
+app.SeatingView = Backbone.View.extend({
   el: '',
   initialize: function() {
 

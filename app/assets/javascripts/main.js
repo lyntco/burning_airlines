@@ -6,6 +6,7 @@ $(document).ready(function() {
     appView: $('#app-template').html(),
     flightView: $('#flight-template').html(),
     airplaneView: $('#airplane-template').html(),
+    airplaneNewView: $('#new-airplane-template').html(),
     airplanesView: $('#airplanes-template').html()
   }
 
@@ -15,4 +16,4 @@ $(document).ready(function() {
   app.flights = new app.Flights();
   app.flights.fetch();
   Backbone.history.start();
-})
+});
