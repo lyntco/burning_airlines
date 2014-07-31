@@ -12,6 +12,9 @@ app.Router = Backbone.Router.extend({
   'users': 'getUsers',
   'users/:id': 'getUser'
   },
+  initialize: function() {
+
+  },
   index: function() {
     console.log('you got index');
   },
@@ -26,9 +29,11 @@ app.Router = Backbone.Router.extend({
   },
 
   getAirplanes: function() {
-    var view = new app.AirplanesView();
-    view.render();
     console.log('you got airplanes');
+    app.airplanes.fetch()
+    var view = new app.AirplanesView({collection: app.airplanes});
+    // debugger;
+    view.render();
   },
 
   getAirplane: function(id) {
