@@ -40,7 +40,7 @@ app.ReserveSeatingView = Backbone.View.extend({
       newRow.text( rowLetters[n] )
       _( seatingBox.model.get('cols') ).times(function(m){
         // _.each(reservedSeats, function(seat))
-        if ( reservedSeats[n] == m) {
+        if ( reservedSeats[n+1] == m+1) {
           console.log('got it');
           newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() );
         } else {
