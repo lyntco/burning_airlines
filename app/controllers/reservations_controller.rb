@@ -1,6 +1,10 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
+    if @current_user.is_admin?
+      @reservations = Reservation.all
+    else
+      @reservations = Reservation.where(:user_id => @current_user.id)
+    end
     render json: @reservations
   end
 
