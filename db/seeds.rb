@@ -22,6 +22,7 @@ f1 = Flight.create(:flight_number => "707", :origin => 'SYD', :destination => 'H
 f1.airplane = a1
 f1.save
 f2.airplane = a1
+f2.save
 
 r1 = Reservation.create(:row => 2, :col => 5)
 
