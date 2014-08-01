@@ -7,10 +7,17 @@ app.FlightView = Backbone.View.extend({
     _.bindAll(this, 'render');
     this.model.bind('change', this.render);
   },
+  events: {
+    'click': 'view'
+  },
   render: function() {
     var flightHTML = Handlebars.compile( app.templates.flightView );
     var copy = flightHTML( this.model.toJSON() );
     this.$el.append( copy );
     return this.el;
+  },
+  view: function(){
+     app.router.navigate('flights/' + this.model.get('id'), true );
   }
+
 });
