@@ -14,6 +14,6 @@ app.ReserveSeatView = Backbone.View.extend({
     return this.el;
   },
   saveSeat: function() {
-    console.log(this)
+    console.log(this.flight)
   }
 });

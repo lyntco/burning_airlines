@@ -37,6 +37,7 @@ app.FlightSearchView = Backbone.View.extend({
     mainView.$el.find('#flight-results').html('');
     var selectedFlights = this.collection.where({origin: $('#flight-start-dropdown option:selected').val(), destination: $('#flight-end-dropdown option:selected').val()});
     _.each(selectedFlights, function(flight) {
+      // debugger;
       var view = new app.FlightView({model: flight});
       mainView.$el.find('#flight-results').html(view.render());
     });
