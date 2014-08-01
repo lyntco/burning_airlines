@@ -24,6 +24,7 @@ $(document).ready(function() {
 
   var startBusiness = function() {
     app.router = new app.Router;
+    // backbone needs to start after router
     Backbone.history.start();
   };
 
