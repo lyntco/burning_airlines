@@ -12,7 +12,7 @@ Airplane.destroy_all
 Reservation.destroy_all
 
 
-u1 = User.create(:username => 'lynt', :password => 'chicken', :password_confirmation => 'chicken', :email => 'strawww@gmail.com', :name => 'Larlyn', :is_admin? => true)
+u1 = User.create(:username => 'lynt', :password => 'chicken', :password_confirmation => 'chicken', :email => 'strawww@gmail.com', :name => 'Larlyn', :is_admin => true)
 a1 = Airplane.create(:name => 'Burn baby burn', :rows => 4, :cols => 20)
 
 

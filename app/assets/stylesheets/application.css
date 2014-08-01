@@ -19,25 +19,38 @@ body {
   max-width: 960px;
   margin: auto;
 }
+/*
+.seatRow {
+  height: 40px;
+}*/
+
+.seatRow:nth-of-type(even) {
+  padding-bottom: 2em;
+}
 
 .seat {
   height: 40px;
-  width: 40px;
-  border: 1px solid red;
+  width: 3%;
+  border: 1px solid #bf0000;
+  border-top: 10px solid #bf0000;
+  border-bottom: 10px solid #bf0000;
   display: inline-block;
+  border-radius: 1em;
+  margin: .2em;
 }
 
 .reserve:hover {
-  background-color: red;
+  background-color: #bf0000;
 }
 
 .booked {
-  background-color: #ddd;
+  opacity: .5;
+  /*background-color: ;*/
 }
 
 .my-booking {
  background-color: blue;
 }
 .my-booking:hover {
- background-color: red;
+ background-color: #bf0000;
 }
