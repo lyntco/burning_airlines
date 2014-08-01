@@ -26,32 +26,35 @@ app.ReserveSeatingView = Backbone.View.extend({
   render: function() {
     var seatingBox = this;
     var mainView = this;
-    reservedSeats = [];
+    var reservedSeats = {};
     _.each( mainView.reservedSeats, function(seat) {
       var row = seat.row;
       var col = seat.col;
-      reservedSeats.push({row: row, row: col});
+      reservedSeats[row] = col;
     });
-    console.log(mainView.reservedSeats);
     // console.log(reservedSeats.indexOf([1,2]))
-
     this.$el.html( app.templates.seatingView );
     _( seatingBox.model.get('rows') ).times(function(n){
-      var rowLetters = ['A','B','C','D','E','F','G','H']
-      var newRow = $('<div class="seatRow"/>')
+      var rowLetters = ['A','B','C','D','E','F','G','H'];
+      var newRow = $('<div class="seatRow"/>');
       newRow.text( rowLetters[n] )
-
       _( seatingBox.model.get('cols') ).times(function(m){
         // _.each(reservedSeats, function(seat))
-        if ( reservedSeats ) {
-          newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() )
+        if ( reservedSeats[n] == m) {
+          console.log('got it');
+          newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() );
         } else {
           newRow.append( new app.ReserveSeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() )
         }
       });
-
       seatingBox.$el.append( newRow )
     });
+  },
 
+  checkPresence: function(array, check) {
+    _.each(array, function(ele) {
+      if (array[0] == check[0] && array[1] && array[1]) return true;
+    })
+    return false;
   }
 });
