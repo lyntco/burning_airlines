@@ -4,6 +4,14 @@ class FlightsController < ApplicationController
     render json: flights
   end
 
+  def show
+    response = {
+      flight: Flight.find(params[:id]),
+      seat: Reservation.where(flight_id: params[:id])
+    }
+    render json: response
+  end
+
   def create
     flight = Flight.create(:flight_number => params[:flight_number],
       :origin => params[:origin],
