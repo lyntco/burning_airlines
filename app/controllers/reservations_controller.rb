@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    reservation = Reservation.create(:user_id => @current_user.id, :flight_id => params[:flight_id])
+    reservation = Reservation.create(:user_id => @current_user.id, :flight_id => params[:flight_id], :row => params[:row], :col => params[:col])
     render :json => reservation
   end
 
