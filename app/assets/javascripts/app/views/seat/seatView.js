@@ -2,7 +2,7 @@ var app = app || {};
 
 app.SeatView = Backbone.View.extend({
   tagName: 'div',
-  className: 'seat',
+  className: 'seat booked',
   initialize: function() {
   },
   render: function() {
