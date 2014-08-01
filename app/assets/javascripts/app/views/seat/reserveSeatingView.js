@@ -26,7 +26,7 @@ app.ReserveSeatingView = Backbone.View.extend({
       newRow.text( rowLetters[n] )
 
       _( seatingBox.model.get('cols') ).times(function(m){
-        newRow.append( new app.ReserveSeatView({flight: seatingBox.flight, col: m+1, row:n+1}).render() )
+        newRow.append( new app.ReserveSeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() )
       });
 
       seatingBox.$el.append( newRow )
