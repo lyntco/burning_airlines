@@ -25,7 +25,7 @@ app.MySeatView = Backbone.View.extend({
     $(event.target).toggleClass('reserve')
     $(event.target).toggleClass('booked')
     var book = app.reservations.get({flight_id: this.flight.get('id'), row: rowNo, col: colNo})
-    book.destroy()
+    book.destroy();
     console.log(book)
   }
 });
