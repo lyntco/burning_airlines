@@ -8,8 +8,8 @@ Mythical in its WDI history, we are attempting this challenge.
 + [x] Create Airplane
 + [x] List Airplane
 + [ ] Create Flights
-+ [ ] List Flights
-+ [ ] Create Reservations
++ [x] List Flights
++ [x] Create Reservations
 + [x] List reservations
 + [ ] Remove Reservations
-+ [ ] Update Reservations real time
++ [x] Update Reservations real time

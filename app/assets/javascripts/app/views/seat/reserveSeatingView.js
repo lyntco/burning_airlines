@@ -36,10 +36,10 @@ app.ReserveSeatingView = Backbone.View.extend({
         reservedSeats[row] = [col];
       }
     });
-
-    _.each( app.reservations.where({user_id: mainView.user_id}), function(seat) {
-      var row = seat.row;
-      var col = seat.col;
+    console.log(app.reservations.where({user_id: mainView.user_id})[0].get('col'));
+    _.each( app.reservations.where({user_id: mainView.user_id}), function(reservation) {
+      var row = reservation.get('row');
+      var col = reservation.get('col');
       if (mySeats[row]) {
         mySeats[row].push(col);
       } else {
@@ -54,10 +54,11 @@ app.ReserveSeatingView = Backbone.View.extend({
       newRow.text( rowLetters[n] )
       _( seatingBox.model.get('cols') ).times(function(m){
         // _.each(reservedSeats, function(seat))
-      console.log(reservedSeats[0])
         if ( reservedSeats[n+1] && reservedSeats[n+1].indexOf(m+1) > -1) {
+          // console.log(mySeats)
           if ( mySeats[n+1] && mySeats[n+1].indexOf(m+1) > -1 ) {
-            newRow.append( new app.MySeatView( {flight: seatingBox.flight, col: m+1, row n+1}).render() );
+            console.log('my seat')
+            newRow.append( new app.MySeatView( {flight: seatingBox.flight, col: m+1, row: n+1}).render() );
           } else {
             newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row: n+1}).render() );
           }
