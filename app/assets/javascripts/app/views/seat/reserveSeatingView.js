@@ -12,19 +12,21 @@ app.ReserveSeatingView = Backbone.View.extend({
     var flight = this.flight
     flight.fetch().done(function(response){
         mainView.reservedSeats = response.seat;
+        mainView.user_id = response.user_id;
         mainView.render();
     });
-    setInterval(function() {
-      flight.fetch().done(function(response){
-        mainView.reservedSeats = response.seat;
-        mainView.render();
-      });
-    },1000);
+    // setInterval(function() {
+    //   flight.fetch().done(function(response){
+    //     mainView.reservedSeats = response.seat;
+    //     mainView.render();
+    //   });
+    // },1000);
   },
   render: function() {
     var seatingBox = this;
     var mainView = this;
     var reservedSeats = {};
+    var mySeats = {};
     _.each( mainView.reservedSeats, function(seat) {
       var row = seat.row;
       var col = seat.col;
@@ -34,6 +36,17 @@ app.ReserveSeatingView = Backbone.View.extend({
         reservedSeats[row] = [col];
       }
     });
+
+    _.each( app.reservations.where({user_id: mainView.user_id}), function(seat) {
+      var row = seat.row;
+      var col = seat.col;
+      if (mySeats[row]) {
+        mySeats[row].push(col);
+      } else {
+        mySeats[row] = [col];
+      }
+    });
+
     this.$el.html( app.templates.seatingView );
     _( seatingBox.model.get('rows') ).times(function(n){
       var rowLetters = ['A','B','C','D','E','F','G','H'];
@@ -43,8 +56,11 @@ app.ReserveSeatingView = Backbone.View.extend({
         // _.each(reservedSeats, function(seat))
       console.log(reservedSeats[0])
         if ( reservedSeats[n+1] && reservedSeats[n+1].indexOf(m+1) > -1) {
-          console.log('got it');
-          newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() );
+          if ( mySeats[n+1] && mySeats[n+1].indexOf(m+1) > -1 ) {
+            newRow.append( new app.MySeatView( {flight: seatingBox.flight, col: m+1, row n+1}).render() );
+          } else {
+            newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row: n+1}).render() );
+          }
         } else {
           newRow.append( new app.ReserveSeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() )
         }

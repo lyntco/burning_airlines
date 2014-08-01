@@ -7,7 +7,7 @@ class FlightsController < ApplicationController
   def show
     response = {
       flight: Flight.find(params[:id]),
-      seat: Reservation.where(flight_id: params[:id])
+      seat: Reservation.where(flight_id: params[:id]),
       user_id: @current_user.id
     }
     render json: response
