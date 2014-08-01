@@ -3,6 +3,9 @@ var app = app || {};
 // This view is for the single seats on an airplane show page
 app.ReserveSeatingView = Backbone.View.extend({
   el: '#main',
+  events: {
+    'click button': 'submitBooking'
+  },
   initialize: function(options) {
     this.flight = options.flight;
     console.log('right view');
@@ -13,12 +16,12 @@ app.ReserveSeatingView = Backbone.View.extend({
         mainView.user_id = response.user_id;
         mainView.render();
     });
-    setInterval(function() {
-      flight.fetch().done(function(response){
-        mainView.reservedSeats = response.seat;
-        mainView.render();
-      });
-    },1000);
+    // setInterval(function() {
+    //   flight.fetch().done(function(response){
+    //     mainView.reservedSeats = response.seat;
+    //     mainView.render();
+    //   });
+    // },1000);
   },
   render: function() {
     var mainView = this;
@@ -68,10 +71,10 @@ app.ReserveSeatingView = Backbone.View.extend({
     });
   },
 
-  checkPresence: function(array, check) {
-    _.each(array, function(ele) {
-      if (array[0] == check[0] && array[1] && array[1]) return true;
-    })
-    return false;
+  submitBooking: function() {
+    var flight = this.flight.get('flight_number');
+    var origin = this.flight.get('origin');
+    var destination = this.flight.get('destination');
+    var reservations = app.reservations.where({user_id: this.user_id});
   }
 });
