@@ -36,7 +36,7 @@ app.ReserveSeatingView = Backbone.View.extend({
         reservedSeats[row] = [col];
       }
     });
-    console.log(app.reservations.where({user_id: mainView.user_id})[0].get('col'));
+
     _.each( app.reservations.where({user_id: mainView.user_id}), function(reservation) {
       var row = reservation.get('row');
       var col = reservation.get('col');

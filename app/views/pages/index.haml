@@ -85,7 +85,7 @@
     %div.col-md-2
       {{ date }}
     %div.col-md-2
-      Seats left
+      {{ ros }}
     %div.col-md-2
     %div.col-md-2
   %div#seating.col-md-12
@@ -100,10 +100,11 @@
     %div.col-md-2
       {{ date }}
     %div.col-md-2
-      Seats left
+      {{ seats }}
     %div.col-md-2
     %div.col-md-2
-      Book button
+      %button
+        Book
 
 // List of flights
 %script#flights-template{type: 'text/template'}

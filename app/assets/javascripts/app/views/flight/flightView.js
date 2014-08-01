@@ -8,11 +8,14 @@ app.FlightView = Backbone.View.extend({
     this.model.bind('change', this.render);
   },
   events: {
-    'click': 'view'
+    'click button': 'view'
   },
   render: function() {
     var flightHTML = Handlebars.compile( app.templates.flightView );
-    var copy = flightHTML( this.model.toJSON() );
+    var modelJSON = this.model.toJSON();
+    // var booked =
+    modelJSON['seats'] = 7;
+    var copy = flightHTML( modelJSON );
     this.$el.append( copy );
     return this.el;
   },
