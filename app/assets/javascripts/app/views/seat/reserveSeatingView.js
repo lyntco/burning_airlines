@@ -7,6 +7,14 @@ app.ReserveSeatingView = Backbone.View.extend({
     // console.log(options)
     this.flight = options.flight;
     this.render();
+    console.log('right view');
+    var mainView = this
+    var flight = this.flight
+    setInterval(function() {
+      flight.fetch().done(function(){
+        mainView.render();
+      });
+    },1000);
   },
   render: function() {
     var seatingBox = this;
