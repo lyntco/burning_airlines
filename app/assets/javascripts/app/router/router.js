@@ -13,7 +13,8 @@ app.Router = Backbone.Router.extend({
   'users/:id': 'getUser'
   },
   initialize: function() {
-    this.getFlights();
+    // this.getFlights();
+    console.log('routing')
   },
   index: function() {
     console.log('you got index');

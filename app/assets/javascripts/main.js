@@ -22,22 +22,27 @@ $(document).ready(function() {
   app.reservations = new app.Reservations();
   app.flights = new app.Flights();
 
+  var startBusiness = function() {
+    app.router = new app.Router;
+    Backbone.history.start();
+  };
+
   var counter = 0;
   app.flights.fetch().done(function() {
     counter++;
     console.log(counter);
-    if (counter == 3) app.router = new app.Router();
+    if (counter == 3) startBusiness();
   });
   app.reservations.fetch().done(function() {
     counter++;
     console.log(counter);
-    if (counter == 3) app.router = new app.Router();
+    if (counter == 3) startBusiness();
   });
   app.airplanes.fetch().done(function() {
     counter++;
     console.log(counter);
-    if (counter == 3) app.router = new app.Router();
+    if (counter == 3) startBusiness();
   });
 
-  Backbone.history.start();
+
 });
