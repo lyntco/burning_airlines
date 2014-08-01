@@ -11,7 +11,7 @@ app.FlightShowView = Backbone.View.extend({
     this.$el.html( copy );
     var plane_id = this.model.get('airplane_id');
     var plane = app.airplanes.get(plane_id)
-    var seating = new app.ReserveSeatingView({model: plane});
+    var seating = new app.ReserveSeatingView({model: plane, flight: this.model});
   }
 
 });

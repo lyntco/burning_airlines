@@ -31,17 +31,14 @@ $(document).ready(function() {
   var counter = 0;
   app.flights.fetch().done(function() {
     counter++;
-    console.log(counter);
     if (counter == 3) startBusiness();
   });
   app.reservations.fetch().done(function() {
     counter++;
-    console.log(counter);
     if (counter == 3) startBusiness();
   });
   app.airplanes.fetch().done(function() {
     counter++;
-    console.log(counter);
     if (counter == 3) startBusiness();
   });
 
