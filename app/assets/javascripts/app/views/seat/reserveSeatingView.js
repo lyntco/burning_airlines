@@ -12,16 +12,14 @@ app.ReserveSeatingView = Backbone.View.extend({
     var flight = this.flight
     flight.fetch().done(function(response){
         mainView.reservedSeats = response.seat;
-        console.log(mainView.reservedSeats)
         mainView.render();
     });
     setInterval(function() {
       flight.fetch().done(function(response){
         mainView.reservedSeats = response.seat;
-        console.log(mainView.reservedSeats)
         mainView.render();
       });
-    },10000);
+    },1000);
   },
   render: function() {
     var seatingBox = this;
@@ -30,9 +28,12 @@ app.ReserveSeatingView = Backbone.View.extend({
     _.each( mainView.reservedSeats, function(seat) {
       var row = seat.row;
       var col = seat.col;
-      reservedSeats[row] = col;
+      if (reservedSeats[row]) {
+        reservedSeats[row].push(col);
+      } else {
+        reservedSeats[row] = [col];
+      }
     });
-    // console.log(reservedSeats.indexOf([1,2]))
     this.$el.html( app.templates.seatingView );
     _( seatingBox.model.get('rows') ).times(function(n){
       var rowLetters = ['A','B','C','D','E','F','G','H'];
@@ -40,7 +41,8 @@ app.ReserveSeatingView = Backbone.View.extend({
       newRow.text( rowLetters[n] )
       _( seatingBox.model.get('cols') ).times(function(m){
         // _.each(reservedSeats, function(seat))
-        if ( reservedSeats[n+1] == m+1) {
+      console.log(reservedSeats[0])
+        if ( reservedSeats[n+1] && reservedSeats[n+1].indexOf(m+1) > -1) {
           console.log('got it');
           newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() );
         } else {
