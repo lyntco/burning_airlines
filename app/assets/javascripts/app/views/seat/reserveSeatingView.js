@@ -43,7 +43,6 @@ app.ReserveSeatingView = Backbone.View.extend({
         // _.each(reservedSeats, function(seat))
       console.log(reservedSeats[0])
         if ( reservedSeats[n+1] && reservedSeats[n+1].indexOf(m+1) > -1) {
-          console.log('got it');
           newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() );
         } else {
           newRow.append( new app.ReserveSeatView( {flight: seatingBox.flight, col: m+1, row:n+1}).render() )
