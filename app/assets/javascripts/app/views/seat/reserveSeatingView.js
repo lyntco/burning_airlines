@@ -15,12 +15,12 @@ app.ReserveSeatingView = Backbone.View.extend({
         mainView.user_id = response.user_id;
         mainView.render();
     });
-    // setInterval(function() {
-    //   flight.fetch().done(function(response){
-    //     mainView.reservedSeats = response.seat;
-    //     mainView.render();
-    //   });
-    // },1000);
+    setInterval(function() {
+      flight.fetch().done(function(response){
+        mainView.reservedSeats = response.seat;
+        mainView.render();
+      });
+    },1000);
   },
   render: function() {
     var seatingBox = this;
@@ -36,7 +36,7 @@ app.ReserveSeatingView = Backbone.View.extend({
         reservedSeats[row] = [col];
       }
     });
-    console.log(app.reservations.where({user_id: mainView.user_id})[0].get('col'));
+    // console.log(app.reservations.where({user_id: mainView.user_id})[0].get('col'));
     _.each( app.reservations.where({user_id: mainView.user_id}), function(reservation) {
       var row = reservation.get('row');
       var col = reservation.get('col');

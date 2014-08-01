@@ -4,7 +4,7 @@ var app = app || {};
 app.MySeatView = Backbone.View.extend({
   tagName: 'div',
   // id: this.seatID,
-  className: 'seat booked',
+  className: 'seat my-booking',
   events: {
     'click': 'removeSeat'
   },
@@ -23,7 +23,7 @@ app.MySeatView = Backbone.View.extend({
     var rowNo = parseInt( $(event.target).attr('data-row') )
     var colNo = parseInt( $(event.target).attr('data-col') )
     $(event.target).toggleClass('reserve')
-    $(event.target).toggleClass('booked')
+    $(event.target).toggleClass('my-booking')
     var book = app.reservations.where({flight_id: this.flight.get('id'), row: rowNo, col: colNo})[0]
     console.log(book);
     book.destroy();

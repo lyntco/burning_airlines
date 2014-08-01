@@ -23,7 +23,7 @@ app.ReserveSeatView = Backbone.View.extend({
     var rowNo = parseInt( $(event.target).attr('data-row') )
     var colNo = parseInt( $(event.target).attr('data-col') )
     $(event.target).toggleClass('reserve')
-    $(event.target).toggleClass('booked')
+    $(event.target).toggleClass('my-booking')
     var book = new app.Reservation({flight_id: this.flight.get('id'), row: rowNo, col: colNo})
     book.save()
     app.reservations.add(book)

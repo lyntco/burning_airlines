@@ -34,3 +34,10 @@ body {
 .booked {
   background-color: #ddd;
 }
+
+.my-booking {
+ background-color: blue;
+}
+.my-booking:hover {
+ background-color: red;
+}
