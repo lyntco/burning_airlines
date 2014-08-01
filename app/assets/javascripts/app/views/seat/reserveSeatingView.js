@@ -4,9 +4,7 @@ var app = app || {};
 app.ReserveSeatingView = Backbone.View.extend({
   el: '#seating',
   initialize: function(options) {
-    // console.log(options)
     this.flight = options.flight;
-    // this.render();
     console.log('right view');
     var mainView = this
     var flight = this.flight
@@ -46,6 +44,7 @@ app.ReserveSeatingView = Backbone.View.extend({
         mySeats[row] = [col];
       }
     });
+    console.log(mySeats)
 
     this.$el.html( app.templates.seatingView );
     _( seatingBox.model.get('rows') ).times(function(n){
@@ -53,11 +52,8 @@ app.ReserveSeatingView = Backbone.View.extend({
       var newRow = $('<div class="seatRow"/>');
       newRow.text( rowLetters[n] )
       _( seatingBox.model.get('cols') ).times(function(m){
-        // _.each(reservedSeats, function(seat))
         if ( reservedSeats[n+1] && reservedSeats[n+1].indexOf(m+1) > -1) {
-          // console.log(mySeats)
           if ( mySeats[n+1] && mySeats[n+1].indexOf(m+1) > -1 ) {
-            console.log('my seat')
             newRow.append( new app.MySeatView( {flight: seatingBox.flight, col: m+1, row: n+1}).render() );
           } else {
             newRow.append( new app.SeatView( {flight: seatingBox.flight, col: m+1, row: n+1}).render() );
