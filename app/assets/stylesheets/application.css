@@ -20,8 +20,25 @@ body {
   margin: auto;
 }
 
+body::after {
+  content: "";
+  background-image: url('/images/fire.gif');
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+nav {
+  background-color: #fff;
+}
+
 #main {
   margin: auto;
+  background-color: #fff;
 }
 
 .title {

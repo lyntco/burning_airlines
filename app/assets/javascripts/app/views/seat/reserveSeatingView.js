@@ -16,12 +16,12 @@ app.ReserveSeatingView = Backbone.View.extend({
         mainView.user_id = response.user_id;
         mainView.render();
     });
-    // setInterval(function() {
-    //   flight.fetch().done(function(response){
-    //     mainView.reservedSeats = response.seat;
-    //     mainView.render();
-    //   });
-    // },1000);
+    setInterval(function() {
+      flight.fetch().done(function(response){
+        mainView.reservedSeats = response.seat;
+        mainView.render();
+      });
+    },1000);
   },
   render: function() {
     var mainView = this;
@@ -46,7 +46,7 @@ app.ReserveSeatingView = Backbone.View.extend({
         mySeats[row] = [col];
       }
     });
-    console.log(mySeats)
+    // console.log(mySeats)
 
     this.$el.html( app.templates.seatingView ); // MAKES THE HTML WITH THE SEATING TEMPLATE
 
