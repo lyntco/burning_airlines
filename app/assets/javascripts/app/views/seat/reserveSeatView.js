@@ -3,7 +3,6 @@ var app = app || {};
 // This view is the clickable reservable seat in the flight view
 app.ReserveSeatView = Backbone.View.extend({
   tagName: 'div',
-  // id: this.seatID,
   className: 'seat reserve',
   events: {
     'click': 'saveSeat'
